@@ -64,4 +64,16 @@ fun DetailSiswa.toSiswa(): Siswa = Siswa(
     telpon = telpon
 )
 
-
+fun Siswa.toUiStateSiswa(isEntryValid: Boolean = false):UIStateSiswa = UIStateSiswa(
+    detailSiswa = this.toDetailSiswa(),
+    isEntryValid = isEntryValid
+)
+/**
+ * Fungsi ekstensi untuk mengubah data kelas [Siswa] menjadi data kelas [UIStateSiswa]
+ */
+fun Siswa.toDetailSiswa(): DetailSiswa = DetailSiswa(
+    id = id,
+    nama = nama,
+    alamat = alamat,
+    telpon = telpon
+)
